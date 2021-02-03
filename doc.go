@@ -20,9 +20,5 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-// **HTTP echo service with JSON output**
-//
-// **yare** (*Yet Another REST Echo*) is a small HTTP echo server written in Go programming language.
-// Core features are also available as Go package.
-//
+// Package yare maps http.Request and http.Response properties to easily JSON loggable map.
 package yare
