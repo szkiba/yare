@@ -32,6 +32,16 @@ You can install the pre-compiled binary or use Docker.
 Download the pre-compiled binaries from the [releases page](https://github.com/szkiba/yare/releases) and
 copy to the desired location.
 
+### Install with Go
+
+If you have Go environment set up, you can build yare from source by running:
+
+```sh
+go get github.com/szkiba/yare/cmd/yare
+```
+
+Binary would be installed to $GOPATH/bin/yare.
+
 ### Running with Docker
 
 You can also use it within a Docker container. To do that, you'll need to
