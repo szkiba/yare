@@ -29,7 +29,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/iszkiba/yare/v1"
+	"github.com/iszkiba/yare"
 )
 
 func TestEchoHandler(t *testing.T) {

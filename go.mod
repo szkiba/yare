@@ -1,4 +1,4 @@
-module github.com/iszkiba/yare/v1
+module github.com/iszkiba/yare
 
 go 1.14
 
