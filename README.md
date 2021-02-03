@@ -29,7 +29,7 @@ You can install the pre-compiled binary or use Docker.
 
 ### Install the pre-compiled binary
 
-Download the pre-compiled binaries from the [releases page](releases) and
+Download the pre-compiled binaries from the [releases page](https://github.com/szkiba/yare/releases) and
 copy to the desired location.
 
 ### Running with Docker
