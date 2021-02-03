@@ -26,7 +26,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/iszkiba/yare"
+	"github.com/szkiba/yare"
 )
 
 func TestMapValues(t *testing.T) {

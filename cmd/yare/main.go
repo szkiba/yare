@@ -31,7 +31,7 @@ import (
 	"runtime"
 	"strconv"
 
-	"github.com/iszkiba/yare"
+	"github.com/szkiba/yare"
 )
 
 var version = "dev"

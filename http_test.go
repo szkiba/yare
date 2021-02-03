@@ -30,7 +30,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/iszkiba/yare"
+	"github.com/szkiba/yare"
 )
 
 type kv map[string]string

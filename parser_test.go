@@ -27,7 +27,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/iszkiba/yare"
+	"github.com/szkiba/yare"
 )
 
 func TestParseJWT(t *testing.T) {
