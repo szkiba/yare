@@ -160,9 +160,9 @@ func Test_parseRequestBody(t *testing.T) {
 			want: Dict{"dummy": "Ready"},
 		},
 		{
-			name:    "error",
-			args:    args{r: httptest.NewRequest("POST", "http://localhost", bytes.NewBufferString(""))},
-			wantErr: true,
+			name: "empty",
+			args: args{r: httptest.NewRequest("POST", "http://localhost", bytes.NewBufferString(""))},
+			want: nil,
 		},
 	}
 	for _, tt := range tests {
