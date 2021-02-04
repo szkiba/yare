@@ -8,8 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Build
+- Added changelog generation during build.
+
 ### Docs
 - Added 'go get' as install method.
+
+### Fix
+- Fix http 400 status for request without body and Content-Type.
 
 
 <a name="v1.2.0"></a>
