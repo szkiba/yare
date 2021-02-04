@@ -202,6 +202,10 @@ func parseResponseBody(r *http.Response) (Dict, error) {
 
 	r.Body = reader
 
+	if len(body) == 0 {
+		return nil, nil
+	}
+
 	out, err := parseContent(r.Header.Get("Content-Type"), body)
 	if err != nil {
 		return nil, err
