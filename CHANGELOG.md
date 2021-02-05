@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+<a name="1.3.0"></a>
+## [1.3.0] - 2021-02-05
+### Build
+- Changelog generation moved to separated make target.
+
+### Feat
+- Support optinal parsers.
+
+### Fix
+- Ignore JWT parsing error in Authorization header.
+- Fix handling response without body.
+
+
 <a name="v1.2.1"></a>
 ## [v1.2.1] - 2021-02-04
 ### Build
@@ -43,7 +56,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <a name="v1.0.0"></a>
 ## v1.0.0 - 2021-02-03
 
-[Unreleased]: https://github.com/szkiba/yare/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/szkiba/yare/compare/1.3.0...HEAD
+[1.3.0]: https://github.com/szkiba/yare/compare/v1.2.1...1.3.0
 [v1.2.1]: https://github.com/szkiba/yare/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/szkiba/yare/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/szkiba/yare/compare/v1.0.1...v1.1.0
