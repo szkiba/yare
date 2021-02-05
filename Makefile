@@ -49,6 +49,7 @@ tag: guard-VERSION
 	@git-chglog --next-tag $(VERSION) --silent -o CHANGELOG.md
 	@git add CHANGELOG.md
 	@git commit -m "prepare $(VERSION)"
+	@git push
 	@git tag -a $(VERSION) -m "release $(VERSION)"
 	@git push origin $(VERSION)
 .PHONY: changelog
