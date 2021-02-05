@@ -36,6 +36,15 @@ import (
 // ParserFunc used to register custom body and authorization parsers.
 type ParserFunc func([]byte) (Dict, error)
 
+// Optional returns a new ParserFunc which silently ignore errors.
+func (p ParserFunc) Optional() ParserFunc {
+	return func(in []byte) (Dict, error) {
+		dict, _ := p(in)
+
+		return dict, nil
+	}
+}
+
 type contentType struct {
 	main   string
 	sub    string
