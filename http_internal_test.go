@@ -342,3 +342,42 @@ func Test_omitEmpty(t *testing.T) {
 		})
 	}
 }
+
+func Test_canonicalHeaderKeys(t *testing.T) {
+	t.Parallel()
+
+	type args struct {
+		d Dict
+	}
+
+	tests := []struct {
+		name string
+		args args
+		want Dict
+	}{
+		{
+			name: "mixed",
+			args: args{d: Dict{"content-type": "text", "Accept": "*"}},
+			want: Dict{"Content-Type": "text", "Accept": "*"},
+		},
+		{
+			name: "canonical",
+			args: args{d: Dict{"Content-Type": "text", "Accept": "*"}},
+			want: Dict{"Content-Type": "text", "Accept": "*"},
+		},
+		{
+			name: "empty",
+			args: args{d: Dict{}},
+			want: Dict{},
+		},
+	}
+	for _, tt := range tests {
+		tt := tt
+		t.Run(tt.name, func(t *testing.T) {
+			t.Parallel()
+			if got := canonicalHeaderKeys(tt.args.d); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("canonicalHeaderKeys() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

@@ -43,7 +43,7 @@ func MapRequest(r *http.Request, body bool) (Dict, error) {
 
 	// HTTP headers
 	if d := omitEmpty(MapValues(r.Header)); d != nil {
-		out["headers"] = d
+		out["headers"] = canonicalHeaderKeys(d)
 	}
 
 	// Cookies
@@ -105,7 +105,7 @@ func MapResponse(r *http.Response, body bool) (Dict, error) {
 
 	// HTTP headers
 	if d := omitEmpty(MapValues(r.Header)); d != nil {
-		out["headers"] = d
+		out["headers"] = canonicalHeaderKeys(d)
 	}
 
 	// Cookies
@@ -228,6 +228,18 @@ func wrapReader(r io.ReadCloser) (io.ReadCloser, []byte, error) {
 func omitEmpty(d Dict) Dict {
 	if d == nil || len(d) == 0 {
 		return nil
+	}
+
+	return d
+}
+
+func canonicalHeaderKeys(d Dict) Dict {
+	for k, v := range d {
+		c := http.CanonicalHeaderKey(k)
+		if c != k {
+			d[c] = v
+			delete(d, k)
+		}
 	}
 
 	return d
