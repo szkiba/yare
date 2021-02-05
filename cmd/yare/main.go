@@ -79,5 +79,5 @@ func init() {
 	_ = yare.RegisterContentType("application/json", yare.ParseJSON)
 	_ = yare.RegisterContentType("application/jwt", yare.ParseJWT)
 
-	yare.RegisterAuthScheme("Bearer", yare.ParseJWT)
+	yare.RegisterAuthScheme("Bearer", yare.ParserFunc(yare.ParseJWT).Optional())
 }
