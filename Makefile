@@ -28,6 +28,7 @@ setup:
 	@go mod download
 	@go get github.com/google/addlicense
 	@go get -u github.com/git-chglog/git-chglog/cmd/git-chglog
+	@go get github.com/gojp/goreportcard
 	@go mod tidy
 	@addlicense -f LICENSE . cmd
 .PHONY: setup
@@ -39,9 +40,15 @@ test:
 
 #: Build server
 build:
-	@git-chglog --silent -o CHANGELOG.md
 	@goreleaser  build --snapshot --rm-dist
 .PHONY: build
+
+#: Update changelog
+changelog: guard-VERSION
+	@git diff-index --quiet HEAD || (echo "Git working directory not clean" ; exit 1)
+	@#git-chglog --next-tag $(VERSION) --silent -o CHANGELOG.md
+	@echo "ooo"
+.PHONY: changelog
 
 #: Genereate test coverage report
 cover: test
@@ -50,7 +57,8 @@ cover: test
 
 #: Run all the linters
 lint:
-	golangci-lint run ./...
+	@golangci-lint run ./...
+	@goreportcard-cli
 .PHONY: lint
 
 #: Run all the tests and code checks
@@ -75,3 +83,9 @@ help:
 		| sed -n 's/^#: \(.*\)###\(.*\):.*/\2###\1/p' \
 		| column -t  -s '###'
 .PHONY: help
+
+guard-%:
+	@if [ '${${*}}' = "" ]; then \
+		echo "Environment variable $* not set" >&2; \
+		exit 1; \
+	fi
