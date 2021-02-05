@@ -46,8 +46,7 @@ build:
 #: Update changelog
 changelog: guard-VERSION
 	@git diff-index --quiet HEAD || (echo "Git working directory not clean" ; exit 1)
-	@#git-chglog --next-tag $(VERSION) --silent -o CHANGELOG.md
-	@echo "ooo"
+	@git-chglog --next-tag $(VERSION) --silent -o CHANGELOG.md
 .PHONY: changelog
 
 #: Genereate test coverage report
