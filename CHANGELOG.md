@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+<a name="v1.3.1"></a>
+## [v1.3.1] - 2021-02-06
+### Chore
+- Improve changelog generation.
+
+### Feat
+- Convert http header names to canonical form in response.
+
+
 <a name="v1.3.0"></a>
 ## [v1.3.0] - 2021-02-05
 ### Build
@@ -56,7 +65,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 <a name="v1.0.0"></a>
 ## v1.0.0 - 2021-02-03
 
-[Unreleased]: https://github.com/szkiba/yare/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/szkiba/yare/compare/v1.3.1...HEAD
+[v1.3.1]: https://github.com/szkiba/yare/compare/v1.3.0...v1.3.1
 [v1.3.0]: https://github.com/szkiba/yare/compare/v1.2.1...v1.3.0
 [v1.2.1]: https://github.com/szkiba/yare/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/szkiba/yare/compare/v1.1.0...v1.2.0
