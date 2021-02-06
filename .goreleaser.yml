@@ -54,6 +54,7 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+      - "^chore:"
 dockers:
   - #
     dockerfile: Dockerfile.goreleaser
